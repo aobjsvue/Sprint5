@@ -10,6 +10,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 const DADJOKE_URL = "https://icanhazdadjoke.com/";
+const CHUCKNORRIS_URL = "https://api.chucknorris.io/jokes/random";
 const jokes = document.querySelector("#joke");
 const reportJokes = [];
 const rates = document.querySelector(".rates");
@@ -26,13 +27,26 @@ rates.style.display = "none";
 // }
 function getJoke() {
     return __awaiter(this, void 0, void 0, function* () {
-        const response = yield fetch(`${DADJOKE_URL}`, {
-            method: "GET",
-            headers: { 'Accept': 'application/json' }
-        });
-        const dataToJson = yield response.json();
-        // console.log(dataToJson);
-        jokes.innerHTML = dataToJson.joke;
+        let response;
+        let dataToJson;
+        let random = Math.floor(Math.random() * 2) + 1;
+        // console.log(random);
+        if (random === 1) {
+            response = yield fetch(`${DADJOKE_URL}`, {
+                method: "GET",
+                headers: { 'Accept': 'application/json' }
+            });
+            dataToJson = yield response.json();
+            // console.log(dataToJson);
+            jokes.innerHTML = dataToJson.joke;
+        }
+        else {
+            response = yield fetch(`${CHUCKNORRIS_URL}`, {
+                method: "GET"
+            });
+            dataToJson = yield response.json();
+            jokes.innerHTML = dataToJson.value;
+        }
         rates.style.display = "block";
     });
 }
@@ -44,3 +58,13 @@ function rateJoke(rate) {
     rates.style.display = "none";
     console.log(reportJokes);
 }
+const WEATHER_URL = 'http://api.openweathermap.org/data/2.5/weather?q=Barcelona,es&APPID=fb4136156c63da5063767994036a4030&units=metric&lang=ca';
+const weatherApp = document.querySelector("#weather");
+window.onload = function getWeather() {
+    return __awaiter(this, void 0, void 0, function* () {
+        const weatherResponse = yield fetch(`${WEATHER_URL}`);
+        const weatherToJson = yield weatherResponse.json();
+        weatherApp.innerHTML = weatherToJson.weather[0].description;
+        console.log(weatherToJson);
+    });
+};
