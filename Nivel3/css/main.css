@@ -1,11 +1,15 @@
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
   background-image: url("../images/blob0.svg");
   background-size: cover;
+  font-family: 'Open Sans';
+  height: 100vh;
 }
 
 header .weather {
@@ -30,10 +34,14 @@ section .content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-top: 8em;
 }
 
@@ -46,7 +54,7 @@ section .slogan {
 
 section .jokes {
   margin-bottom: 2.2em;
-  width: 500px;
+  width: 830px;
 }
 
 section .rates {
@@ -95,5 +103,32 @@ section .next::before {
   left: 3px;
   border-radius: 2em;
   z-index: -1;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  section .content {
+    margin-top: 5em;
+  }
+  section .jokes {
+    width: 80vw;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+  section .content {
+    margin-top: 3.5em;
+  }
+  section .jokes {
+    width: 80vw;
+  }
+}
+
+@media (min-width: 280px) and (max-width: 480px) {
+  section .content {
+    margin-top: 1.5em;
+  }
+  section .jokes {
+    width: 80vw;
+  }
 }
 /*# sourceMappingURL=main.css.map */
