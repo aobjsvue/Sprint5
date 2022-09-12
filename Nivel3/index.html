@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acudits</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
+</head>
+<body>
+    <main class="container">
+        <header class="header">
+            <div class="weather">
+                <p></p><img src="" alt="weather icon" id="icon">
+                <span id="vr"></span>
+                <b><span id="temperature"></span> °C</b></p>
+            </div>
+        </header>
+        <section class="section">
+            <div class="content">
+                <div class="card">
+                    <h1 class="slogan">Preparat per riure?</h1>
+                    <h4 class="jokes" id="joke"></h4>
+                    <div class="rates">
+                        <a class="btn emoji" onclick="rateJoke(1)"><img src="./images/1F622.svg" alt="1"></a>
+                        <a class="btn emoji" onclick="rateJoke(2)"><img src="./images/1F610.svg" alt="2"></a>
+                        <a class="btn emoji" onclick="rateJoke(3)"><img src="./images/1F606.svg" alt="3"></a>
+                    </div>
+                    <button class="btn next" onclick="getJoke()">Següent acudit</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="./js/index.js"></script>
+</body>
+</html>

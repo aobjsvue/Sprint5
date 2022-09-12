@@ -1,0 +1,122 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url("../images/blob0.svg");
+    background-size: cover;
+    font-family: 'Open Sans';
+    height: 100vh;
+}
+
+header {
+    .weather {
+        display: flex;
+        align-items: center;
+    }
+        #vr {
+            border: none;
+            border-left: 2px solid;
+            height: 2.4em;
+            width: 1px;
+            margin-left: 0.5em;
+            margin-right: 0.9em;
+        }
+}
+
+section {
+    .content {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        margin-top: 8em;
+    }
+        .slogan {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: black;
+            margin-bottom: 2.2em;
+        }
+        .jokes {
+            margin-bottom: 2.2em;
+            width: 830px;
+        }
+        .rates {
+            margin-bottom: 2.2em;
+        }
+            a {
+                img{
+                    width: 3em;
+                }
+            }
+            .btn {
+                background-color: transparent;
+                cursor: pointer;
+            }
+                .emoji {
+                    position: relative;
+                }
+                    .emoji::before {
+                        position: absolute;
+                        content: '';
+                        background-color: #edc951;
+                        width: 1.9em;
+                        height: 1.9em;
+                        bottom: 0.6em;
+                        left: 0.7em;
+                        border-radius: 2em;
+                        z-index: -1;
+                    }
+
+        .next {
+            border-radius: 2em;
+            padding: 1em 2.6em;
+            font-weight: bold;
+            position: relative;
+        }
+            .next::before {
+                position: absolute;
+                content: '';
+                background-color: #edc951;
+                width: 102%;
+                height: 110%;
+                top: 3px;
+                left: 3px;
+                border-radius: 2em;
+                z-index: -1;
+            }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    section {
+        .content {
+            margin-top: 5em;
+        }
+        .jokes {
+            width: 80vw;
+        }
+    }
+}
+@media (min-width: 481px) and (max-width: 767px) {
+    section {
+        .content {
+            margin-top: 3.5em;
+        }
+        .jokes {
+            width: 80vw;
+        }
+    }
+}
+@media (min-width: 280px) and (max-width: 480px) {
+    section {
+        .content {
+            margin-top: 1.5em;
+        }
+        .jokes {
+            width: 80vw;
+        }
+    }
+}
